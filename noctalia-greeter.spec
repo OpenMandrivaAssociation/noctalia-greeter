@@ -60,10 +60,10 @@ chmod 0644 %{buildroot}%{_datadir}/noctalia-greeter/greetd_setup_lib.sh
 
 # Replace env-based shell interpreters with absolute paths.
 # Preserve Bash for scripts that use Bash-specific syntax.
-for script in 
-    %{buildroot}%{_bindir}/noctalia-greeter-session 
-    %{buildroot}%{_bindir}/noctalia-greeter-print-greetd-config 
-    %{buildroot}%{_bindir}/noctalia-greeter-xsession 
+for script in \
+    %{buildroot}%{_bindir}/noctalia-greeter-session \
+    %{buildroot}%{_bindir}/noctalia-greeter-print-greetd-config \
+    %{buildroot}%{_bindir}/noctalia-greeter-xsession \
     %{buildroot}%{_datadir}/noctalia-greeter/*.sh
 do
     [ -f "$script" ] || continue
