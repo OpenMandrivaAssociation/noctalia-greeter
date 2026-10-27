@@ -44,6 +44,9 @@ Pair it with Noctalia v5 if you want wallpaper and palette synced from the shell
 
 %prep
 %autosetup -p1
+# Fix libxml2 xmlFree macro compatibility
+sed -i 's/::xmlFree(raw);/xmlFree(raw);/' \
+    src/tools/passwordless_sync_policy_xml.cpp
 
 %build
 %meson
